@@ -1,6 +1,6 @@
 {
   "name": "Deploy",
-  "application": "sample3",
+  "application": "todo-app",
   "appConfig": {},
   "executionEngine": "v2",
   "keepWaitingPipelines": true,
@@ -13,7 +13,7 @@
       "clusters": [
         {
           "account": "local",
-          "application": "sample3",
+          "application": "todo-app",
           "cloudProvider": "kubernetes",
           "containers": [
             {
@@ -36,9 +36,9 @@
               "imageDescription": {
                 "account": "gcr",
                 "fromTrigger": true,
-                "imageId": "gcr.io/PROJECT/sample-app:v.*",
+                "imageId": "gcr.io/PROJECT/todo-app:v.*",
                 "registry": "gcr.io",
-                "repository": "PROJECT/sample-app",
+                "repository": "PROJECT/todo-app",
                 "tag": "v.*"
               },
               "imagePullPolicy": "ALWAYS",
@@ -47,7 +47,7 @@
                 "memory": null
               },
               "livenessProbe": null,
-              "name": "PROJECT-sample-app",
+              "name": "PROJECT-todo-app",
               "ports": [
                 {
                   "containerPort": 8080,
@@ -88,8 +88,8 @@
             "KubernetesPod"
           ],
           "loadBalancers": [
-            "sample-frontend-canary",
-            "sample-frontend-prod"
+            "todo-app-frontend-canary",
+            "todo-app-frontend-prod"
           ],
           "namespace": "default",
           "nodeSelector": {},
@@ -122,7 +122,7 @@
       "clusters": [
         {
           "account": "local",
-          "application": "sample3",
+          "application": "todo-app",
           "cloudProvider": "kubernetes",
           "containers": [
             {
@@ -141,9 +141,9 @@
               "imageDescription": {
                 "account": "gcr",
                 "fromTrigger": true,
-                "imageId": "gcr.io/PROJECT/sample-app:v.*",
+                "imageId": "gcr.io/PROJECT/todo-app:v.*",
                 "registry": "gcr.io",
-                "repository": "PROJECT/sample-app",
+                "repository": "PROJECT/todo-app",
                 "tag": "v.*"
               },
               "imagePullPolicy": "ALWAYS",
@@ -152,7 +152,7 @@
                 "memory": null
               },
               "livenessProbe": null,
-              "name": "PROJECT-sample-app",
+              "name": "PROJECT-todo-app",
               "ports": [
                 {
                   "containerPort": 8080,
@@ -193,7 +193,7 @@
             "KubernetesPod"
           ],
           "loadBalancers": [
-            "sample-backend-canary"
+            "todo-app-backend-canary"
           ],
           "namespace": "default",
           "nodeSelector": {},
@@ -223,14 +223,14 @@
     },
     {
       "account": "local",
-      "application": "sample3",
+      "application": "todo-app",
       "cloudProvider": "kubernetes",
       "cloudProviderType": "kubernetes",
       "container": {
         "args": [],
         "command": [
           "curl",
-          "http://sample-backend-canary:8080"
+          "http://todo-app-backend-canary:8080"
         ],
         "envVars": [],
         "imageDescription": {
@@ -238,7 +238,7 @@
           "fromTrigger": true,
           "organization": "PROJECT",
           "registry": "gcr.io",
-          "repository": "PROJECT/sample-app",
+          "repository": "PROJECT/todo-app",
           "tag": "v.*"
         },
         "name": "1494826281215",
@@ -257,14 +257,14 @@
     {
       "account": "local",
       "annotations": {},
-      "application": "sample3",
+      "application": "todo-app",
       "cloudProvider": "kubernetes",
       "cloudProviderType": "kubernetes",
       "container": {
         "args": [],
         "command": [
           "curl",
-          "http://sample-frontend-canary:80"
+          "http://todo-app-frontend-canary:80"
         ],
         "envVars": [],
         "imageDescription": {
@@ -272,7 +272,7 @@
           "fromTrigger": true,
           "organization": "PROJECT",
           "registry": "gcr.io",
-          "repository": "PROJECT/sample-app",
+          "repository": "PROJECT/todo-app",
           "tag": "v.*"
         },
         "name": "1494826281215",
@@ -306,7 +306,7 @@
       "clusters": [
         {
           "account": "local",
-          "application": "sample3",
+          "application": "todo-app",
           "cloudProvider": "kubernetes",
           "containers": [
             {
@@ -327,16 +327,16 @@
               "imageDescription": {
                 "account": "gcr",
                 "fromTrigger": true,
-                "imageId": "gcr.io/PROJECT/sample-app:v.*",
+                "imageId": "gcr.io/PROJECT/todo-app:v.*",
                 "registry": "gcr.io",
-                "repository": "PROJECT/sample-app",
+                "repository": "PROJECT/todo-app",
                 "tag": "v.*"
               },
               "imagePullPolicy": "ALWAYS",
               "lifecycle": null,
               "limits": null,
               "livenessProbe": null,
-              "name": "PROJECT-sample-app",
+              "name": "PROJECT-todo-app",
               "ports": [
                 {
                   "containerPort": 80,
@@ -375,7 +375,7 @@
             "KubernetesPod"
           ],
           "loadBalancers": [
-            "sample-backend-prod"
+            "todo-app-backend-prod"
           ],
           "namespace": "default",
           "nodeSelector": {},
@@ -409,7 +409,7 @@
       "clusters": [
         {
           "account": "local",
-          "application": "sample3",
+          "application": "todo-app",
           "cloudProvider": "kubernetes",
           "containers": [
             {
@@ -428,22 +428,22 @@
                 },
                 {
                   "name": "BACKEND_URL",
-                  "value": "http://sample-backend-prod:8080/metadata"
+                  "value": "http://todo-app-backend-prod:8080/metadata"
                 }
               ],
               "imageDescription": {
                 "account": "gcr",
                 "fromTrigger": true,
-                "imageId": "gcr.io/PROJECT/sample-app:v.*",
+                "imageId": "gcr.io/PROJECT/todo-app:v.*",
                 "registry": "gcr.io",
-                "repository": "PROJECT/sample-app",
+                "repository": "PROJECT/todo-app",
                 "tag": "v.*"
               },
               "imagePullPolicy": "ALWAYS",
               "lifecycle": null,
               "limits": null,
               "livenessProbe": null,
-              "name": "PROJECT-sample-app",
+              "name": "PROJECT-todo-app",
               "ports": [
                 {
                   "containerPort": 80,
@@ -482,7 +482,7 @@
             "KubernetesPod"
           ],
           "loadBalancers": [
-            "sample-frontend-prod"
+            "todo-app-frontend-prod"
           ],
           "namespace": "default",
           "nodeSelector": {},
@@ -522,7 +522,7 @@
       "organization": "PROJECT",
       "pipeline": "61372c70-62af-422f-9565-e1975a758612",
       "registry": "gcr.io",
-      "repository": "PROJECT/sample-app",
+      "repository": "PROJECT/todo-app",
       "status": [
         "successful"
       ],
