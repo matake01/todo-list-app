@@ -1,6 +1,6 @@
-# Todo List example application
+# todo-list-app
 
-A Java Microservice application that follows CQRS pattern and uses CircleCI/Google Kubernetes Engine for destribution. 
+An application that illustrates the CQRS pattern, which uses CircleCI/Google Kubernetes Engine for CI/CD.
 
 # Architecture
 
