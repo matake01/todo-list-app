@@ -1,8 +1,6 @@
 # Todo List example application
 
-This project refers to illustrate how an app, following the [CQRS](http://microservices.io/patterns/data/cqrs.html) pattern, can be distributed in the Cloud (GCP) using Kubernetes and Spinnaker for Continuous Deployment.
-
-Note: The application originates from the [eventuate-examples-java-spring-todo-list](https://github.com/eventuate-examples/eventuate-examples-java-spring-todo-list) project.
+A Java Microservice application that follows CQRS pattern and uses CircleCI/Google Kubernetes Engine for destribution. 
 
 # Architecture
 
